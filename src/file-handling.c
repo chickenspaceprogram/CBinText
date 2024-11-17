@@ -148,9 +148,9 @@ void print_header_file(FILE *out, char *name) {
 void print_c_file(FILE *out, FILE **in, char *name, int num_inputs) {
     print_comment(out);
 
-    fprintf(out, "#include \"%s.h\"\n\nvoid %s(FILE *stream) {\n    fputs(\"", name, name);
+    fprintf(out, "#include \"%s.h\"\n\nvoid %s(FILE *stream) {\n    fputs\n    (\n    ", name, name);
     for (int i = 0; i < num_inputs; ++i) {
         esc_replace(out, in[i]);
     }
-    fputs("\", stream);\n}\n", out);
+    fputs("    , stream\n    );\n}\n", out);
 }
