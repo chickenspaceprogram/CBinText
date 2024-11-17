@@ -6,11 +6,10 @@
 #include "tokenize.h"
 #include "file-handling.h"
 #include <stdio.h>
-#include <ctype.h>
 
 // kinda bloated main fn but oh well
 int main(int argc, char **argv) {
-    int output_index, num_input_files, out_name_len;
+    int num_input_files, out_name_len;
     FILE *out_h, *out_c, **in;
     char *out_name_h, *out_name_c;
     bool out_is_stdout = true;
@@ -34,12 +33,8 @@ int main(int argc, char **argv) {
         free(out_name_c);
         return 1;
     }
-    free(out_name_h);
-    free(out_name_c);
-    out_name_h = NULL;
-    out_name_c = NULL;
 
-    in = open_files(argc, argv, &num_input_files, output_index);
+    in = open_files(argc, argv, &num_input_files);
     if (in == NULL) {
         fclose(out_h);
         fclose(out_c);
@@ -48,10 +43,12 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    print_header_file(out_h, out_name_h, argv[1]);
+    print_header_file(out_h, argv[1]);
     print_c_file(out_c, in, argv[1], num_input_files);
-    
+
     close_files(in, num_input_files);
+    free(out_name_c);
+    free(out_name_h);
     fclose(out_h);
     fclose(out_c);
     free(in);

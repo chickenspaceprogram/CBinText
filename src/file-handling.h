@@ -8,12 +8,15 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include "tokenize.h"
 
 // output_file_loc should be the position of the output file, if specified, or -1.
 // returns NULL if an error occurred somewhere, otherwise returns a pointer to the array of files
 // sets num_input_files to the number of input files
-FILE **open_files(int argc, char **argv, int *num_input_files, int output_file_index);
+FILE **open_files(int argc, char **argv, int *num_input_files);
 
 // opens input file, returns NULL and closes all the files if opening fails
 FILE *open_input_file(FILE **files, int file_index, char *name);
@@ -34,7 +37,7 @@ void print_time(FILE *out);
 
 void print_comment(FILE *out);
 
-void print_header_file(FILE *out, char *name_h, char *name);
+void print_header_file(FILE *out, char *name);
 
 void print_c_file(FILE *out, FILE **in, char *name, int num_inputs);
 

@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
-project(Boose_PA6 C)
+project(cbintxt C)
 
 set(CMAKE_C_STANDARD 11)
-add_executable(Boose_PA6 
+add_executable(cbintxt
         ../src/main.c
         ../src/argparse.h
         ../src/argparse.c

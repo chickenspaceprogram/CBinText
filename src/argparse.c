@@ -15,13 +15,13 @@ int get_arg_index(int argc, char **argv, char *short_form, char *long_form, int 
 }
 
 bool get_help_version(int argc, char **argv) {
-    if (argc == 1 || check_for_arg(argc, argv, HELP_SHORT, HELP_LONG, 1) != -1) {
+    if (argc == 1 || get_arg_index(argc, argv, HELP_SHORT, HELP_LONG, 1) != -1) {
         fprintf(stderr, "help here\n");
         // can dogfood a help msg later
         return true;
     }
 
-    if (check_for_arg(argc, argv, VERSION_SHORT, VERSION_LONG, 1) != -1) {
+    if (get_arg_index(argc, argv, VERSION_SHORT, VERSION_LONG, 1) != -1) {
         fprintf(stderr, "version here\n");
         // can dogfood a version msg later
         return true;

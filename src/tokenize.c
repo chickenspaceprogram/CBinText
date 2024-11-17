@@ -6,8 +6,7 @@
 
 void esc_replace(FILE *output, FILE *input) {
     int chr;
-    while (!feof(input)) {
-        chr = getc(input);
+    while ((chr = getc(input)) != EOF) {
         // pretty cursed but a switch-case followed by if stmt would've been worse
         if (chr == '\x7F') {
             fputs("\\x7F", output);
@@ -21,11 +20,11 @@ void esc_replace(FILE *output, FILE *input) {
         else if (chr == '\"') {
             fputs("\\\"", output);
         }
-        else if (chr == "?") {
+        else if (chr == '?') {
             fputs("\\?", output);
         }
         else if (chr < ' ' && chr > 0) {
-            fprintf(output, "\\x%x", chr);
+            fprintf(output, "\\x%x\"\"", chr);
         }
         else if (chr == 0) {
             fputs("\\0", output);
