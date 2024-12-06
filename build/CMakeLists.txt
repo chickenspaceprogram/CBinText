@@ -10,4 +10,6 @@ add_executable(cbintxt
         ../src/tokenize.c
         ../src/file-handling.c
         ../src/file-handling.h
+	../src/help.h
+	../src/help.c
 )

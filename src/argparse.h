@@ -5,9 +5,7 @@
 #ifndef CBINTXT_ARGPARSE_H
 #define CBINTXT_ARGPARSE_H
 
-#include <string.h>
 #include <stdbool.h>
-#include <stdio.h>
 
 #define HELP_SHORT "-h"
 #define HELP_LONG "--help"

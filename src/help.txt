@@ -1,0 +1,11 @@
+cbintxt v0.2
+
+Usage: cbintxt <output> <input> [-n <name>] ...
+
+<output> ::= The filename of the output, without a file extension.
+<input> ::= The filename(s) of the input text file. Pass `-` to read from stdin.
+
+Flags:
+
+-n <name>: Specifies a function name that differs from the file's name. Mandatory if reading from stdin.
+ 

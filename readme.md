@@ -1,4 +1,4 @@
-# cbintxt v0.1
+# cbintxt v0.2
 
 `cbintxt` is an application that converts text files into C source files that can be linked to and compiled.
 This allows for text files to be linked into a C program at compile-time, and the text file included in the compiled binary. 
