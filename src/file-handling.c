@@ -1,5 +1,10 @@
-#include "file-handling.h"
+#include <time.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "tokenize.h"
 
+#include "file-handling.h"
 
 FILE **open_files(int argc, char **argv, int *num_input_files) {
     if (argc == 2) {

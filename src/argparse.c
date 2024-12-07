@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "help.h"
+#include "messages/help.h"
 #include "argparse.h"
 
 #define HELP_SHORT "-h"

@@ -6,12 +6,7 @@
 #define CBINTXT_FILE_HANDLING_H
 
 #include <stdio.h>
-#include <time.h>
 #include <stdbool.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include "tokenize.h"
 
 // output_file_loc should be the position of the output file, if specified, or -1.
 // returns NULL if an error occurred somewhere, otherwise returns a pointer to the array of files
