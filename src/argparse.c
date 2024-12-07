@@ -15,6 +15,12 @@
 #define VERSION_SHORT "-v"
 #define VERSION_LONG "--version"
 
+typedef enum state {
+    State_AtOutputArg,
+    State_AtInputArg,
+    State_AtFileNameSpecifier,
+} State;
+
 // this is kinda a bad way to this but i'm lazy and it works
 int get_arg_index(int argc, char **argv, char *short_form, char *long_form, int chk_start) {
     for (int i = chk_start; i < argc; ++i) {
