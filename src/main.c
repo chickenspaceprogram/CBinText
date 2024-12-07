@@ -6,6 +6,7 @@
 #include "tokenize.h"
 #include "file-handling.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 // kinda bloated main fn but oh well
 int main(int argc, char **argv) {

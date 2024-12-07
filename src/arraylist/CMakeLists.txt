@@ -4,7 +4,6 @@
 
 cmake_minimum_required(VERSION 3.15)
 project(arraylist-tests C)
-set(CMAKE_BUILD_TYPE Debug)
 
 add_library(arraylist
     arraylist.c
@@ -20,6 +19,6 @@ target_link_libraries(TEST-arraylist arraylist)
 enable_testing()
 
 add_test(
-    NAME TEST-arraylist
+    NAME arraylist
     COMMAND $<TARGET_FILE:TEST-arraylist>
 )
